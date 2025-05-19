@@ -1,0 +1,42 @@
+@StockControlAPI_HostAddress = http://localhost:7116
+
+### Add a product
+POST https://localhost:7116/api/Product
+Content-Type: application/json
+
+{
+  "description": "Product Test",
+  "isActive" : true,
+  "manufactureDate": "2024-01-01",
+  "expiryDate": "2035-01-01",
+  "value": 100.0
+}
+
+###
+
+### List products (active)
+GET https://localhost:7116/api/Product?isActive=true&skip=0&take=10
+
+###
+
+### Get product by ID
+GET https://localhost:7116/api/Product/1
+
+###
+
+### Update product
+PUT https://localhost:7116/api/Product/1
+Content-Type: application/json
+
+{
+  "description": "Product Updated",
+  "manufactureDate": "2024-01-10",
+  "expiryDate": "2026-01-10",
+  "value": 150.0
+}
+
+###
+
+### Delete (deactivate) the product
+DELETE https://localhost:7116/api/Product/1
+
