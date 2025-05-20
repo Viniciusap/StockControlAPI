@@ -36,6 +36,10 @@ namespace StockControlAPI.Extensions
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBaseValidator<ProductDto>, ProductValidator>();
 
+            services.AddScoped<IStockService, StockService>();
+            services.AddScoped<IStockRepository, StockRepository>();
+            services.AddScoped<IBaseValidator<StockDto>, StockValidator>();
+
             return services;
         }
 

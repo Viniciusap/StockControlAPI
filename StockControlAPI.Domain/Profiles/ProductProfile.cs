@@ -9,7 +9,6 @@ namespace StockControlAPI.Domain.Profiles
         public ProductProfile()
         {
             CreateMap<ProductDto, Product>();
-            CreateMap<ProductDto, Product>();
         }
     }
 }

@@ -6,5 +6,6 @@ namespace StockControlAPI.Infrastruture.Data
     public class StockControlAPIContext(DbContextOptions<StockControlAPIContext> options) : DbContext(options)
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
     }
 }
