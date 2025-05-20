@@ -71,11 +71,11 @@ With **MediatR**, actions like adding or deleting stock could be handled by dedi
 ## Getting Started
 ### Prerequisites
 Ensure you have the following installed:
-- [.NET SDK]([URL]) version 6.0 or higher
+- [.NET SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0) version 8.0
 ### Running the Application
 1. Clone the repository:
 ```
-git clone [URL]
+git clone https://github.com/Viniciusap/StockControlAPI
 ```
 2. Navigate to the project directory:
 ```
