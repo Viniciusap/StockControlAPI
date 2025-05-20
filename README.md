@@ -56,6 +56,18 @@ This repository contains the source code for the `ProductController` in the `Sto
 #### HATEOAS Implementation
 The API responses are designed to include HATEOAS links, which provide dynamic navigation to related resources. This helps clients interact with the API more intuitively and discover available actions without prior knowledge of the API structure.
 
+
+## Future Improvements
+
+### Introduce Mediator Pattern
+A good future improvement for this API is implementing the **Mediator Pattern** using [MediatR](https://github.com/jbogard/MediatR). This would:
+- **Decouple the controllers from the service layer**, reducing direct dependencies.
+- **Improve maintainability** by structuring requests and responses more clearly.
+- **Enhance scalability**, making it easier to add new features without modifying existing logic.
+
+With **MediatR**, actions like adding or deleting stock could be handled by dedicated command and query handlers, providing cleaner architecture.
+
+
 ## Getting Started
 ### Prerequisites
 Ensure you have the following installed:
