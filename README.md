@@ -89,4 +89,4 @@ dotnet build
 ```
 dotnet run
 ```
-5. The API will be available at `[URL]`.
+5. The API will be available at `https://localhost:7116/swagger`.
