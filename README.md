@@ -41,6 +41,18 @@ This repository contains the source code for the `ProductController` in the `Sto
 - **Description**: Deletes a product by its ID.
 - **Response**:
 - **200 OK**: Returns a success message.
+6. **Add Stock**
+- **URL**: `POST /api/product/{id}/stock`
+- **Description**: Adds a or sums Stock.
+- **Request Body**: `StockDto`
+- **Response**:
+- **201 Created**: Returns the sum for the Product Stock.
+7. **Delete Stock**
+- **URL**: `DELETE /api/product/{id}/stock`
+- **Description**: Adds a or sums Stock.
+- **Response**:
+- **200 Created**: Returns a success message.
+
 #### HATEOAS Implementation
 The API responses are designed to include HATEOAS links, which provide dynamic navigation to related resources. This helps clients interact with the API more intuitively and discover available actions without prior knowledge of the API structure.
 

@@ -8,9 +8,10 @@ namespace StockControlAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductController(IProductService productService) : ControllerBase
+    public class ProductController(IProductService productService, IStockService stockService) : ControllerBase
     {
         private readonly IProductService _productService = productService;
+        private readonly IStockService _stockService = stockService;
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -53,6 +54,22 @@ namespace StockControlAPI.Controllers
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProduct(id);
+            return Ok(ApiResponse<string>.SuccessResponse(null, "Product removed successfully."));
+        }
+
+        [HttpPost("{id}/stock")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public IActionResult AddStock([FromRoute] int id, [FromBody] int quantity)
+        {
+            var stock = _stockService.AddStock(new StockDto(id, quantity));
+            return Ok(stock);
+        }
+
+        [HttpDelete("{id}/stock")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult DeleteStock(int id)
+        {
+            _stockService.DeleteStock(id);
             return Ok(ApiResponse<string>.SuccessResponse(null, "Product removed successfully."));
         }
     }
